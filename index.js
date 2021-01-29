@@ -55,7 +55,8 @@ const arrayUserAgents = [
         const browser = await puppeteer.launch ({
             headless: true,
             timeout: 0,
-            args: ["--no-sandbox"]
+            args: ["--no-sandbox"],
+            ignoreDefaultArgs: ['--disable-extensions']
           });
           const page = await browser.newPage ();
         
