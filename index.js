@@ -13,7 +13,7 @@ app.get(`/`, (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`it's work`);
+    console.log(`Yahoo!`);
 });
 /*    
 (async () => {
