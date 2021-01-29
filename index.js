@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 80;
 
 app.get(`/`, (req, res) => {
-    res.end(`<h1>Home page</h1>`);
+    res.end(`<h1>10</h1>`);
 });
 app.listen(PORT, () => {
     console.log(`Yahoo!`);
@@ -53,8 +53,9 @@ const arrayUserAgents = [
     try {
 
         const browser = await puppeteer.launch ({
-            headless: false,
-            timeout: 0
+            headless: true,
+            timeout: 0,
+            args: ["--no-sandbox"]
           });
           const page = await browser.newPage ();
         
