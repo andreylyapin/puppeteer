@@ -1,9 +1,9 @@
-request = require("request");
-var cron = require('node-cron');
+const request = require("request");
+const cron = require('node-cron');
 
 let index = 0;
 
-cron.schedule('*/10 * * * * *', () => {
+cron.schedule('* * * * * *', () => {
 
   request.post({
   url: `http://a0505612.xsph.ru/micromodules/receiver.php`,
@@ -12,5 +12,4 @@ cron.schedule('*/10 * * * * *', () => {
   },
   (err, response, body) => {  
   });
-  console.log(index);
 });
