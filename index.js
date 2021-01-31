@@ -7,7 +7,7 @@ cron.schedule('* */1 * * * *', () => {
 
   request.post({
   url: `http://a0505612.xsph.ru/index.php`,
-  form: { message: `index: ${++index}` },
+  form: { message: `message` },
   followAllRedirects: true
   },
   (err, response, body) => {  
