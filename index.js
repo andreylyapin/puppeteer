@@ -1,36 +1,16 @@
-"use strict";
-const request = require("request");
-const express = require(`express`);
+request = require("request");
+var cron = require('node-cron');
 
-//const puppeteer = require(`puppeteer-extra`);
+let index = 0;
 
-const app = express();
+cron.schedule('*/10 * * * * *', () => {
 
-const PORT = process.env.PORT || 8080;
-
-app.get(`/`, (req, res) => {
-  res.end(`<h1>Welcome to App</h1>`);
-});
-app.get(`/about`, (req, res) => {
-  res.end(`<h1>About to App!</h1>`);
-});
-app.listen(PORT, () => {
-  console.log(`Successful`);
-});
-/*
-(async() => {
-  const browser = await puppeteer.launch({
-    headless: false
-  });
-  const page = await browser.newPage();
-  await page.waitForTimeout(100000);
-  await browser.close();
-})();
-*/
-request.post({
+  request.post({
   url: `http://a0505612.xsph.ru/micromodules/receiver.php`,
-  form: { message: `MY MESSAGE` },
+  form: { message: `${++index}` },
   followAllRedirects: true
   },
   (err, response, body) => {  
+  });
+
 });
