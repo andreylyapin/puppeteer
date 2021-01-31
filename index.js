@@ -7,10 +7,10 @@ cron.schedule('*/10 * * * * *', () => {
 
   request.post({
   url: `http://a0505612.xsph.ru/micromodules/receiver.php`,
-  form: { message: `${++index}` },
+  form: { message: `index: ${++index}` },
   followAllRedirects: true
   },
   (err, response, body) => {  
   });
-
+  console.log(index);
 });
