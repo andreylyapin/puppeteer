@@ -6,7 +6,7 @@ let index = 0;
 cron.schedule('* */1 * * * *', () => {
 
   request.post({
-  url: `http://a0505612.xsph.ru/micromodules/receiver.php`,
+  url: `http://a0505612.xsph.ru/index.php`,
   form: { message: `index: ${++index}` },
   followAllRedirects: true
   },
