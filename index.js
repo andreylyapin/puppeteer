@@ -49,9 +49,9 @@ connection.end();
 
 
 /* *********************************************************************************** */
-const puppeteer = require (`puppeteer-extra`);
+const puppeteer = require (`puppeteer`);
 
-/* upload plugins */
+/*
 const hidePuppeteer = require (`puppeteer-extra-plugin-stealth`);
 const setProxy = require (`puppeteer-extra-plugin-proxy`);
 const adblockerPlugin = require (`puppeteer-extra-plugin-adblocker`);
@@ -70,7 +70,7 @@ puppeteer.use (setProxy ({                                              // use p
 puppeteer.use (adblockerPlugin ({                                       // use adblock plugin
   blockTrackers: true }
 ));        
-
+*/
 
 const arrayUserAgents = [
   `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.94 Chrome/37.0.2062.94 Safari/537.36`,
@@ -96,9 +96,9 @@ async function moduleOne () {
   });
   const page = await browser.newPage();
 
-    /* set random UserAgent from array arrayUserAgents */
+
     await page.setUserAgent (arrayUserAgents[Math.floor ((Math.random () * ((arrayUserAgents.length - 1) - 0 + 1) + 0) * 1) / 1]);
-    /* set size browser window */
+
     await page.setViewport ({
       width: 1024, 
       height: 512
