@@ -89,7 +89,7 @@ async function moduleOne () {
   try {
   const browser = await puppeteer.launch ({
     timeout: 0,
-    args: ["--no-sandbox"],
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
     ignoreDefaultArgs: ['--disable-extensions'],
     headless: true,
     ignoreHTTPSErrors: true
