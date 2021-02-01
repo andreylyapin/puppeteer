@@ -85,8 +85,10 @@ const arrayUserAgents = [
 /* *********************************************************************************** */
 
 async function moduleOne () {
+
+  try {
   const browser = await puppeteer.launch ({
-    headless: false,
+    headless: true,
     timeout: 0
   });
   const page = await browser.newPage();
@@ -129,5 +131,10 @@ async function moduleOne () {
     });
 
   await page.waitForTimeout(5000);
+  console.log(`finish`);
   await browser.close();
+
+  } catch (e) {
+    console.log(`Error: ${e.message}`);
+  }
 }
