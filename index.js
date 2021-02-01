@@ -88,8 +88,11 @@ async function moduleOne () {
 
   try {
   const browser = await puppeteer.launch ({
+    timeout: 0,
+    args: ["--no-sandbox"],
+    ignoreDefaultArgs: ['--disable-extensions'],
     headless: true,
-    timeout: 0
+    ignoreHTTPSErrors: true
   });
   const page = await browser.newPage();
 
